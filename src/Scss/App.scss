@@ -1,0 +1,108 @@
+@import 'Variable.scss';
+
+
+h1{
+  font-size: 3rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+.sps-input{
+  border-top: 0px transparent;
+  border-left: 0px transparent;
+  border-right: 0px transparent;
+  height: 40px;
+  width: 255px;
+  outline: none;
+}
+
+.sps-btn{
+  height: 40px;
+  outline: none;
+  &-primary{
+    background-color: $primary-color;
+    border: 0px;
+    color: #fff;
+    border-radius: $border-radius;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+
+
+.sps-container {
+  max-width: 1111px !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+// grid container
+.sps-row {
+  display: flex;
+  flex-flow: row wrap;
+  // margin-bottom: 1rem;
+}
+
+// grid item
+.sps-col {
+  padding: $col-guilter;
+}
+
+
+// media query mixin
+@mixin break($size) {
+  @media (min-width: map-get($col-breakpoints, $size)) {
+    @content;
+  }
+}
+
+// loop over the breakpoints
+@each $key, $value in $col-breakpoints {
+  @for $i from 1 through $items {
+    .sps-col-#{$key}-#{$i} {
+      flex: 0 0 100%;
+      @include break($key) {
+        flex: 0 0 #{$i / $items * 100%} !important;
+
+      }
+    }
+  }
+}
+
+
+// text color
+.text-white { color: #fff !important }
+.text-primary { color: $primary-color !important }
+
+// loop over the margin
+@each $key, $value in $margin {
+  .mt-#{$key} { margin-top: #{$value} !important; }
+  .ml-#{$key} { margin-left: #{$value} !important; }
+  .mr-#{$key} { margin-right: #{$value} !important; }
+  .mb-#{$key} { margin-bottom: #{$value} !important; }
+  .mx-#{$key} { margin-left: #{$value} !important; margin-right: #{$value} !important; }
+  .my-#{$key} { margin-top: #{$value} !important; margin-bottom: #{$value} !important; }
+
+  .pt-#{$key} { padding-top: #{$value} !important; }
+  .pl-#{$key} { padding-left: #{$value} !important; }
+  .pr-#{$key} { padding-right: #{$value} !important; }
+  .pb-#{$key} { padding-bottom: #{$value} !important; }
+  .px-#{$key} { padding-left: #{$value} !important; padding-right: #{$value} !important; }
+  .py-#{$key} { padding-top: #{$value} !important; padding-bottom: #{$value} !important; }
+}
+.text-center { text-align: center !important; }
+.text-light { font-weight: lighter; }
+.position-relative { position: relative;}
+.text-uppercase { text-transform: uppercase };
+.text-muted {color: rgba(0, 0, 0, 0.5); }
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  width: 100%;
+  margin-top: 10%;
+}
+footer { height: 243px; background-color: $primary-color; }

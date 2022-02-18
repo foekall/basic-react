@@ -1,0 +1,47 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body{
+  margin: 0px;
+  padding: 0px;
+}
+body .loading{
+  display:block;
+  overflow:hidden;
+}
+
+$primary-color: #09357B;
+$sp-card-padding: .6rem;
+$col-guilter: 0.75rem;
+$border-radius: 4px;
+
+// number of columns variable
+$items: 12;
+
+// breakpoints map
+$col-breakpoints: (
+  xs: 575.98px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 120px
+);
+
+// margin
+$margin: (
+  0: 0rem,
+  1: 0.313rem,
+  2: 0.625rem,
+  3: 0.938rem,
+  4: 1.25rem,
+  5: 1.563rem,
+  6: 1.875rem,
+  7: 2.188rem,
+  8: 2.5rem,
+  9: 2.813rem,
+  10: 3.125rem,
+);
+
+

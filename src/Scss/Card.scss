@@ -1,0 +1,32 @@
+@import 'Variable.scss';
+
+.sps-card{
+    // background-image: url('../#{$nth}.png');
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    display: flex;
+    flex-direction: column;
+    &-footer{
+        h1{
+            font-size: 1.7rem;
+            padding: 0px;
+            margin: 0px;
+        }
+        h2{
+            font-size: 1.5rem;
+        }
+        h3{
+            font-size: 1.2rem;
+        }
+        p{
+            margin: .5rem;
+        }
+        opacity:0.9;
+        background: $primary-color;
+        margin-top: auto;
+        min-height: 135px;
+        overflow: hidden;
+        padding: .6rem;
+        color: #fff;
+    }
+}
